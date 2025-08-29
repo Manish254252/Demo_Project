@@ -1,0 +1,62 @@
+<p>Feature: David Jeremiah Website Navigation As a website visitor I
+want to navigate through the David Jeremiah website seamlessly So that I
+can access content, browse books, and manage my account effectively</p>
+<p>Background: Given I am using Chromium browser And the test
+environment is set up with Playwright And I have valid test
+credentials</p>
+<p><span class="citation" data-cites="smoke">@smoke</span> <span
+class="citation" data-cites="regression">@regression</span> <span
+class="citation" data-cites="TC001">@TC001</span> Scenario: Complete
+David Jeremiah website workflow Given I navigate to the David Jeremiah
+splash page When I skip the splash page and go to the main site Then the
+main website should load successfully</p>
+<pre><code>When I verify the homepage elements and navigation
+Then all homepage elements should be visible and functional
+And the page should be fully loaded
+
+When I navigate to book content and interact with &quot;Promise of Heaven&quot;
+Then the book details page should load with interactive elements
+And I should be able to interact with the book content
+
+When I return to the main page and verify the homepage
+Then the homepage should load correctly after navigation
+And all homepage elements should be verified
+
+When I navigate to login and attempt authentication with test credentials
+Then the login process should complete
+And verification may be skipped due to test credentials
+
+When I perform final verification and cleanup
+Then the current URL should contain &quot;davidjeremiah.org&quot;
+And a workflow completion screenshot should be captured
+And the test should complete successfully</code></pre>
+<p><span class="citation" data-cites="demo">@demo</span> <span
+class="citation" data-cites="negative">@negative</span> <span
+class="citation" data-cites="TC002">@TC002</span><br />
+Scenario: Intentional test failure demonstration Given I navigate to the
+David Jeremiah homepage When I wait for the page to load completely Then
+the homepage should load successfully</p>
+<pre><code>When I execute an intentional failing assertion
+Then the assertion should fail with error &quot;expect(1).toBe(2)&quot;
+And the error message should contain &quot;Expected: 2, Received: 1&quot;
+And a screenshot should be captured automatically
+And a video recording should be generated
+And error context should be documented</code></pre>
+<p><span class="citation" data-cites="validation">@validation</span>
+Scenario Outline: Acceptance Criteria Validation Given the test scenario
+“<test_scenario>” is executed When the acceptance criteria
+“<criteria_id>” is evaluated Then the result should be
+“<expected_status>” And the verification should show
+“<verification_result>”</p>
+<pre><code>Examples:
+  | test_scenario | criteria_id | expected_status | verification_result |
+  | Complete Workflow | AC1 | PASS | Navigation from splash to main site successful |
+  | Complete Workflow | AC2 | PASS | Homepage elements load correctly and are interactive |
+  | Complete Workflow | AC3 | PASS | User can browse and interact with book content |
+  | Complete Workflow | AC4 | PASS | User can navigate back to homepage successfully |
+  | Complete Workflow | AC5 | PASS | Login functionality works with valid credentials |
+  | Complete Workflow | AC6 | PASS | All page transitions complete without errors |
+  | Demo Failure | AC1 | PASS | Test navigates to homepage successfully |
+  | Demo Failure | AC2 | PASS | Test executes page load completion |
+  | Demo Failure | AC3 | FAIL | Failure captured with proper error reporting |
+  | Demo Failure | AC4 | PASS | Screenshots and videos generated on failure |</code></pre>

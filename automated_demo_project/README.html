@@ -1,0 +1,174 @@
+<h1
+id="automated-demo-project---david-jeremiah-website-testing">Automated
+Demo Project - David Jeremiah Website Testing</h1>
+<p>A Playwright end-to-end testing framework for testing the David
+Jeremiah website workflow using the Page Object Model (POM) pattern with
+TypeScript.</p>
+<h2 id="project-overview">Project Overview</h2>
+<p>This project automates testing of the David Jeremiah website
+(davidjeremiah.org) workflow including: - Navigation through splash page
+- Book browsing and preorder functionality<br />
+- User login process - Homepage navigation</p>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>automated_demo_project/
+├── src/
+│   ├── pages/           # Page Object Model classes
+│   │   ├── BasePage.ts           # Base page class with common methods
+│   │   ├── BookDetailsPage.ts    # Book details page interactions
+│   │   ├── DavidJeremiahHomePage.ts # Main homepage interactions
+│   │   ├── LoginPage.ts          # Login page functionality
+│   │   └── SplashPage.ts         # Splash page interactions
+│   ├── steps/           # Step classes for test actions
+│   │   ├── BaseSteps.ts          # Base steps class with common assertions
+│   │   ├── DavidJeremiahSteps.ts # David Jeremiah specific workflows
+│   │   └── HomeSteps.ts          # Home page test steps
+│   └── utils/           # Utility classes and helpers
+│       ├── Logger.ts             # Logging utility
+│       └── TestData.ts           # Test data management
+├── tests/
+│   ├── fixtures/        # Test fixtures and base test setup
+│   │   └── test-base.ts          # Extended test fixture with steps
+│   └── specs/           # Test specifications
+│       └── davidJeremiah.spec.ts         # Main David Jeremiah test suite
+├── allure-results/      # Allure test results
+├── allure-report/       # Generated Allure HTML reports
+├── playwright-report/   # Playwright HTML reports
+├── test-results/        # Test execution results and artifacts
+├── screenshots/         # Test screenshots
+├── playwright.config.ts # Playwright configuration
+└── tsconfig.json       # TypeScript configuration</code></pre>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li><strong>Page Object Model (POM)</strong> - Clean separation of page
+elements and test logic</li>
+<li><strong>Step-based Testing</strong> - Business logic abstraction for
+readable tests</li>
+<li><strong>Allure Reporting</strong> - Comprehensive test reporting
+with screenshots and videos</li>
+<li><strong>Multi-browser Support</strong> - Tests can run across
+different browsers</li>
+<li><strong>Screenshot Capture</strong> - Automatic screenshot capture
+on failures</li>
+</ul>
+<h2 id="what-is-page-object-model-pom">What is Page Object Model
+(POM)?</h2>
+<p>Page Object Model is a design pattern that creates an abstraction
+layer between tests and web pages. Instead of writing locators and
+actions directly in test files, POM organizes them into separate page
+classes:</p>
+<ul>
+<li><strong>Separation of Concerns</strong> - Page elements and actions
+are separated from test logic</li>
+<li><strong>Reusability</strong> - Page methods can be reused across
+multiple tests</li>
+<li><strong>Maintainability</strong> - When UI changes, you only update
+the page class, not every test</li>
+<li><strong>Readability</strong> - Tests become more readable with
+descriptive method names</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Instead of: page.click(&#39;#login-button&#39;)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Use: loginPage.clickLoginButton()</span></span></code></pre></div>
+<p>This approach makes tests more maintainable and easier to
+understand.</p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Node.js (v16 or higher)</li>
+<li>npm or yarn</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<ol type="1">
+<li><p>Navigate to the project directory:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> automated_demo_project</span></code></pre></div></li>
+<li><p>Install dependencies:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code></pre></div></li>
+<li><p>Install Playwright browsers:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run install:browsers</span></code></pre></div></li>
+</ol>
+<h3 id="running-tests">Running Tests</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run all tests</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> test</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run tests in headed mode (visible browser)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run test:headed</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run tests with UI mode</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run test:ui</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Run specific test by name pattern</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run test davidJeremiah</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Run tests in debug mode</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run test:debug</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Run tests across all browsers</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run test:all-browsers</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># View Playwright test report</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run test:report</span></code></pre></div>
+<h3 id="test-reporting">Test Reporting</h3>
+<p>This project includes comprehensive reporting with Allure:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Allure report</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run allure:generate</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Open Allure report in browser</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run allure:open</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Serve Allure report</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run allure:serve</span></code></pre></div>
+<h3 id="code-quality">Code Quality</h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run linting</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run lint</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix linting issues</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run lint:fix</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Format code</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run format</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Type checking</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run type-check</span></code></pre></div>
+<h2 id="test-scenarios">Test Scenarios</h2>
+<p>The project currently contains <strong>2 test cases</strong> in
+<code>davidJeremiah.spec.ts</code>:</p>
+<h3 id="complete-david-jeremiah-website-workflow">1. Complete David
+Jeremiah Website Workflow</h3>
+<ul>
+<li>Navigate to David Jeremiah splash page</li>
+<li>Skip splash and go to main site</li>
+<li>Verify homepage elements and navigation</li>
+<li>Browse and interact with book content (Promise of Heaven)</li>
+<li>Return to main page and verify homepage</li>
+<li>Test login functionality with credentials</li>
+<li>Final verification and cleanup</li>
+<li><strong>Status</strong>: ✅ Passing</li>
+</ul>
+<h3 id="intentionally-failing-test-for-demo">2. Intentionally Failing
+Test for Demo</h3>
+<ul>
+<li>Navigate to homepage</li>
+<li>Intentional assertion failure (expect 1 to equal 2)</li>
+<li><strong>Status</strong>: ❌ Failing (by design)</li>
+</ul>
+<p>This setup demonstrates both passing and failing test scenarios for
+testing and reporting purposes.</p>
+<h2 id="project-configuration">Project Configuration</h2>
+<ul>
+<li><strong>TypeScript</strong>: Full TypeScript support with strict
+type checking</li>
+<li><strong>ESLint</strong>: Code linting with Playwright-specific
+rules</li>
+<li><strong>Prettier</strong>: Code formatting</li>
+<li><strong>Allure</strong>: Advanced test reporting with screenshots
+and videos</li>
+<li><strong>Multi-browser</strong>: Support for Chromium, Firefox, and
+WebKit</li>
+</ul>

@@ -1,0 +1,6 @@
+Login button not found or login failed: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('button[type="submit"], button:has-text("Login"), button:has-text("Log In"), input[type="submit"]').first() to be visible
+
+Login step completed (verification skipped due to invalid test credentials)
+✅ Complete automation workflow finished successfully!

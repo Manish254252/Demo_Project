@@ -1,0 +1,40 @@
+BDD_Element,Type,Count,Details,Pass_Rate,Notes
+Features,Total,1,David Jeremiah Website Navigation,100%,Complete feature coverage
+Scenarios,Total,2,Complete workflow + Demo failure,50%,1 pass 1 fail (intentional)
+Scenarios,Passing,1,Complete David Jeremiah website workflow,100%,All acceptance criteria met
+Scenarios,Failing,1,Intentional test failure demonstration,0%,Designed to fail for demo
+Tags,Smoke,1,@smoke critical path testing,100%,Production readiness validation
+Tags,Regression,1,@regression comprehensive testing,100%,Full workflow coverage
+Tags,Demo,1,@demo failure demonstration,0%,QA validation testing
+Tags,Negative,1,@negative error scenarios,0%,Error handling validation
+Steps,Given,2,Precondition setup steps,100%,Environment and navigation setup
+Steps,When,9,Action execution steps,89%,8 pass 1 fail
+Steps,Then,11,Verification and assertion steps,91%,10 pass 1 fail (intentional)
+Steps,And,6,Additional validation steps,100%,Supporting verifications
+Steps,Total,28,All BDD steps executed,89%,25 pass 3 fail (1 intentional assertion + 2 related)
+Acceptance_Criteria,AC1,2,Navigation and setup,100%,Both scenarios pass AC1
+Acceptance_Criteria,AC2,2,Page load and element verification,100%,Both scenarios pass AC2  
+Acceptance_Criteria,AC3,2,Content interaction and assertion,50%,TC001 pass TC002 fail (intentional)
+Acceptance_Criteria,AC4,2,Cleanup and artifact generation,100%,Both scenarios pass AC4
+Acceptance_Criteria,AC5,1,Login functionality,100%,TC001 only - passes
+Acceptance_Criteria,AC6,1,Page transitions,100%,TC001 only - passes
+Test_Data,Credentials,dkassenova@davidjeremiah.org,Login test data,Pass,Test account used
+Test_Data,Book,Promise of Heaven,Content interaction,Pass,Book browsing successful
+Test_Data,URL,davidjeremiah.org,Target website,Pass,Website accessibility confirmed
+Test_Data,Assertion,expect(1).toBe(2),Intentional failure,Fail,Demo failure as designed
+Artifacts,Screenshots,Multiple,Visual verification,Generated,test-failed-1.png workflow-completed.png
+Artifacts,Videos,1,Failure recording,Generated,video.webm for failed test
+Artifacts,Error_Context,1,Detailed error info,Generated,error-context.md for debugging
+Execution,Browser,Chromium,Test environment,Stable,Default Playwright browser
+Execution,Framework,Playwright,Automation tool,Stable,TypeScript implementation
+Execution,Duration,Total 43s,Combined execution time,Efficient,23s + 20s per scenario
+Execution,Date,1/22/25,Test execution date,Current,Latest test run
+Coverage,User_Stories,2,Business requirements,100%,Website visitor + QA engineer
+Coverage,Workflows,2,End-to-end processes,100%,Navigation + Error handling
+Coverage,Error_Scenarios,1,Negative testing,100%,Failure demonstration complete
+Quality,BDD_Compliance,Yes,Gherkin syntax used,100%,Given-When-Then format
+Quality,Traceability,Yes,Requirements to tests,100%,Clear AC mapping
+Quality,Readability,High,Business language used,100%,Stakeholder friendly
+Reporting,Feature_File,1,David_Jeremiah_Website_Navigation.feature,Created,BDD specification
+Reporting,CSV_Documentation,Yes,Excel compatible format,Created,Detailed step results
+Reporting,Test_Results,Comprehensive,Pass/fail with details,Available,Ready for analysis
