@@ -17,7 +17,7 @@ export default defineConfig({
     }]
   ],
   use: {
-    baseURL: 'https://www.davidjeremiah.org',
+    baseURL: 'https://www.davidjeremiah.org/',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: {

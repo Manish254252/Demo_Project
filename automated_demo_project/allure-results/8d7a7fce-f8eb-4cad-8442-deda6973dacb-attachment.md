@@ -1,0 +1,299 @@
+# Page snapshot
+
+```yaml
+- link "DavidJeremiah.org Turning Point is the Broadcast Ministry of Dr. David Jeremiah Turning Point":
+  - /url: /
+  - heading "DavidJeremiah.org Turning Point is the Broadcast Ministry of Dr. David Jeremiah" [level=1]
+  - img "Turning Point"
+- img "United States of America"
+- link "Search":
+  - /url: "#"
+  - img "Search"
+- textbox
+- paragraph: Search...
+- img "search new label"
+- link "0":
+  - /url: "#"
+- link "Sign Up":
+  - /url: /create-account
+- link "Login":
+  - /url: /login
+- link "Home":
+  - /url: /
+- link "Radio":
+  - /url: /radio
+- link "Television":
+  - /url: /television
+- link "Magazine":
+  - /url: /magazine
+- link "Bibles":
+  - /url: /jeremiahstudybible/store
+- link " Bible Strong Partners":
+  - /url: /bsp
+- link "Kids":
+  - /url: /forkids/updates
+- link "Events":
+  - /url: /events
+- link "Store":
+  - /url: /store
+- link "Donate":
+  - /url: /donate/pure-gift?origin=site-desk-topnav
+- img "Bible Strong Partners"
+- link "Bible Strong Partners":
+  - /url: "#"
+  - img "Bible Strong Partners"
+- heading "Not Just For Our Time" [level=1]
+- heading "But For All Time" [level=2]
+- heading "Celebrating 30 Years" [level=3]
+- heading "Bible Strong Partners" [level=2]
+- link "Join Today":
+  - /url: "#"
+- link "Already a member?":
+  - /url: /my-account/membership-package
+- img "Dr. David Jeremiah"
+- paragraph: Turning Point and you—standing together to reach this generation for Christ, and many generations to come. Ours is not just a “right now” calling. It is an “all time” calling.
+- paragraph: Regardless of what is happening around us, there is a brighter day to come. We must only look to God's Word to know why God has us here. At such a time as this.
+- paragraph:
+  - text: "For more than four decades, Turning Point has pursued a single God-given mission:"
+  - emphasis: Delivering the unchanging Word of God to an ever-changing world
+  - text: .
+  - strong: And we cannot stop now!
+- paragraph:
+  - text: Each day, He challenges us to move forward in this mission through our ministry together. This is why I invite you to join me as a
+  - emphasis: Bible Strong Partner
+  - text: in 2025.
+- paragraph: My prayer is that you will live with a sense of urgency to see our nation and world transformed by the power of the Gospel. This will happen as we study and proclaim His Word together, lead the lost to Christ, strengthen believers, and extend His Kingdom.
+- link "Read More ":
+  - /url: "#"
+- img "3 Ways to Partner With Turning Point in 2024"
+- heading "3 Ways to Partner With Turning Point in 2025" [level=2]
+- img "Bible Strong Partner Crest"
+- heading "Bible Strong Partner" [level=2]
+- heading "Your Mission:" [level=3]:
+  - emphasis: "Your Mission:"
+- paragraph:
+  - text: As a
+  - emphasis: Bible Strong Partner
+  - text: ", you and your family are our champions. Your committed giving allows Dr. David Jeremiah to teach the Bible cover to cover—providing the financial stability to sustain his timeless teaching."
+- heading "Your Impact:" [level=3]:
+  - emphasis: "Your Impact:"
+- paragraph:
+  - text: Your
+  - emphasis: Bible Strong Partnership
+  - text: will make it possible for Dr. Jeremiah to teach the whole counsel of God’s Word without bending to political, financial, or topical trends—reaching millions with the life-changing truth of the Gospel message and sound teaching from the Bible!
+- paragraph:
+  - text: With your faithful support, Dr. Jeremiah will be able to teach the Bible again this year—with upcoming message series like
+  - emphasis: God Meant It for Good
+  - text: on the life of Joseph, and a brand-new series on heaven.
+- img "Presidents Circle Crest"
+- heading "President’s Circle" [level=2]
+- paragraph:
+  - text: As a
+  - emphasis: President’s Circle Partner
+  - text: ", you and your family provide Dr. Jeremiah the financial stability to make timely decisions about unforeseen opportunities. In 2024, we went global! On December 14, millions of people in 20 U.S. cities and 50 international cities shared the incredible story of Jesus’ birth through our powerful docudrama"
+  - emphasis: Why the Nativity?
+  - text: on Reach the World Day. It was a MASSIVE one-day undertaking, and it would not have been possible without our
+  - emphasis: President’s Circle Partners!
+- paragraph:
+  - emphasis: President’s Circle Partners
+  - text: also enabled us to extend our digital ministry to reach millions more online this year. Because of the faithful support of our
+  - emphasis: President’s Circle Partners
+  - text: ", we were able to say “Yes!” over and over again!"
+- paragraph: With your faithful support, Dr. Jeremiah will continue to be able to accept opportunities like this to share the Gospel with people who so desperately need to hear it.
+- img "Vision Circle Crest"
+- heading "Vision Circle" [level=2]
+- paragraph:
+  - text: As a
+  - emphasis: Vision Circle Partner
+  - text: ", you and your family are joining Dr. Jeremiah in ensuring the future of Turning Point by placing God’s Word into the hands of every generation—both today and tomorrow. Through your support, you allow us to move forward with our missional strategies that are planned many years into the future, like making our Christmas docudrama"
+  - emphasis: Why the Nativity?
+  - text: "available in 11 languages, including: English, Spanish, Mandarin, Hindi, Arabic, Telugu, Farsi, Russian, Ukrainian, Tamil, and Bahasa Indonesia. This means we have the potential to reach an audience of 2.8 billion people in their heart language with the story of Christ!"
+- paragraph:
+  - emphasis: Vision Circle Partners
+  - text: also enable us to develop new children and young adult resources, like the
+  - emphasis: Airship Genesis
+  - text: Kids Study Bible and the PASSAGES series for inquisitive young adults.
+- paragraph: Your strong support will empower and move Dr. Jeremiah’s vision to reach as many people as possible with the truth of God’s Word, securing timeless Bible teaching for generations to come.
+- heading "Commit to Bible Strong Partnership and enjoy..." [level=2]:
+  - text: Commit to
+  - emphasis: Bible Strong Partnership
+  - text: and enjoy...
+- link "The Whole Story book by Dr. Jeremiah":
+  - /url: "#"
+  - img "The Whole Story book by Dr. Jeremiah"
+- paragraph:
+  - emphasis: The Whole Story
+  - text: book by Dr. Jeremiah
+- link "Learn More":
+  - /url: "#"
+- link "Turning Point monthly ministry resources":
+  - /url: "#"
+  - img "Turning Point monthly ministry resources"
+- paragraph: Turning Point monthly ministry resources
+- link "Learn More":
+  - /url: "#"
+- link "50 percent discount on additional study guides":
+  - /url: "#"
+  - img "50 percent discount on additional study guides"
+- paragraph: 50 percent discount on Turning Point study guides
+- link "Learn More":
+  - /url: "#"
+- link "Turning Points monthly devotional magazines":
+  - /url: "#"
+  - img "Turning Points monthly devotional magazines"
+- paragraph: Turning Points monthly devotional magazines
+- link "Learn More":
+  - /url: "#"
+- link "TurningPoint+":
+  - /url: "#"
+  - img "TurningPoint+"
+- paragraph: Instant access to 1,400+ hours of Bible Strong teaching
+- link "Learn More":
+  - /url: "#"
+- group "As you commit to President's Circle or Vision Circle...":
+  - emphasis: As you commit to President's Circle or Vision Circle...
+  - link "Your name inscribed in the registry":
+    - /url: "#"
+    - img "Your name inscribed in the registry"
+  - paragraph:
+    - text: Your name inscribed in the
+    - emphasis: 2025 President’s Circle & Vision Circle Registry
+    - text: for display in the Turning Point Executive Library.
+  - link "Turning Point Padfolio":
+    - /url: "#"
+    - img "Turning Point Padfolio"
+  - paragraph: The leather Turning Point Padfolio.
+- link "Join Today":
+  - /url: "#"
+- link "Already a member?":
+  - /url: /my-account/membership-package
+- img "Turning Point Logo"
+- heading "Lives Changed After Seeking God" [level=2]
+- heading "From one of our BIBLE STRONG PARTNERS" [level=2]
+- paragraph: “I won't go into my whole story, as it is lengthy. Let it suffice for me to tell you that your teaching has enriched my life beyond my wildest dreams, I have watched your broadcast EVERY weekday for the last 4 years, and will continue to do so, whether it is a new series or a repeat. I always get more the second, third, to the ..nth time around. And it seems that your choice of subject is always just what I need that day. I'm actually writing to tell you that, when I became a Bible Strong Partner, I surely did not expect that you would be sending me your valuable books, nearly every month. Thank you! Thank you!! THANK YOU!!!!! And may God bless you abundantly.” -Raychelle
+- img "Raychelle"
+- img "Turning Point Logo"
+- heading "Membership Benefits Details" [level=2]
+- img "The Whole Story, by Dr. David Jeremiah"
+- heading "Our gift as thanks for your Bible Strong Partnership decision today." [level=3]
+- heading "The Whole Story, by Dr. David Jeremiah" [level=2]:
+  - emphasis: The Whole Story
+  - text: ", by Dr. David Jeremiah"
+- paragraph:
+  - text: Experience God’s faithfulness and love in this journey through the Bible with Dr. Jeremiah’s newest Bible reading guide,
+  - emphasis: The Whole Story
+  - text: .
+- paragraph: Get ready for a year of blessings found in God’s Word!
+- paragraph: As Dr. Jeremiah says, “Nothing in life is more important than understanding the Bible. It draws us into a closer relationship with the Lord and positions us to receive His blessings.” This accessible and insightful guide with an accompanying Bible reading plan helps you understand the Bible and connect to God’s message of love, book by book.
+- paragraph: "This 208-page, hardback volume will help you:"
+- list:
+  - listitem: Rest in God’s story of love for you that flows throughout the Bible.
+  - listitem: Glean blessings from God’s Word.
+  - listitem: Reflect on God’s Word with questions and room to write your thoughts and prayers.
+- link "Join Today":
+  - /url: "#"
+- link "Already a member?":
+  - /url: /my-account/membership-package
+- heading "Twelve Bible study resources a year — one for each month of your membership." [level=2]
+- paragraph: Each month we will send you a hard copy of a ministry resource, personally selected by Dr. Jeremiah, along with a study guide that parallels the upcoming radio series. (You may choose to receive these automatically or upon request.)
+- img "Twelve Bible study resources a year — one for each month of your membership."
+- img "50 percent discount on additional study guides"
+- heading "50 percent discount on additional study guides" [level=2]
+- paragraph:
+  - text: As a
+  - emphasis: Bible Strong Partner
+  - text: ", you are eligible to receive a complimentary study guide each month that coincides with Turning Point’s radio broadcasts. You can also request any additional study guides at a 50 percent discount. Each study guide is suited to small group study as well as personal use."
+- heading "Turning Points Magazine & Devotional" [level=2]:
+  - emphasis: Turning Points
+  - text: Magazine & Devotional
+- paragraph: Our full–color, monthly periodical offers a study focus based on Dr. Jeremiah’s teaching, inspiring articles, instructive daily devotionals, radio and TV broadcast schedules, and more! It’s one of the best ways to keep in touch with the ministry of Turning Point.
+- img "Turning Points Magazine & Devotional"
+- img "Turning Point+ Access"
+- heading "TurningPoint+ access" [level=2]
+- paragraph: You now have instant, on-demand access to the vast library of content from Dr. Jeremiah and Turning Point. Enjoy the latest prophecy teaching from Dr. Jeremiah, find a library of topical Bible studies for your small group, or search for biblical content to help you minister to others.
+- heading "Exclusive President’s Circle and Vision Circle Benefit" [level=3]:
+  - text: Exclusive
+  - emphasis: President’s Circle
+  - text: and
+  - emphasis: Vision Circle
+  - text: Benefit
+- heading "Turning Point Leather Padfolio" [level=2]
+- paragraph:
+  - text: Receive this beautiful leather padfolio branded with the Turning Point Bible logo-great for taking notes and recording prayer requests as our special thanks with your
+  - emphasis: President Circle
+  - text: or
+  - emphasis: Vision Circle
+  - text: commitment today.
+- img "Turning Point Padfolio"
+- img "Inscription in the 2025 President’s Circle or Vision Circle Registry"
+- heading "Inscription in the 2025 Vision Circle Registry" [level=2]
+- paragraph: With your permission, your name will be inscribed in a registry in the Turning Point office—a constant encouragement to be displayed in the Turning Point Executive library to Dr. and Mrs. Jeremiah that you are standing with them in prayer and a reminder of your outstanding faithfulness in giving.
+- img "Turning Point Logo"
+- heading "Become a Bible Strong Partner Today!" [level=2]:
+  - text: Become a
+  - emphasis: Bible Strong Partner
+  - text: Today!
+- heading "It's Easy to Simplify Your Membership" [level=2]:
+  - emphasis: It's Easy to Simplify Your Membership
+- separator
+- paragraph:
+  - emphasis: Join Turning Point’s popular auto-giving program!
+- paragraph: Why? It's Convenient • It's Cost-effective • It's Worry free
+- paragraph: Plus, your automatic gifts go further—less postage and paper!
+- img
+- heading "Bible Strong Partnership..." [level=2]
+- heading "Years Strong!" [level=3]:
+  - img
+  - text: Years Strong!
+- heading "Change the world as a BIBLE STRONG PARTNER" [level=2]
+- paragraph: You are warmly invited to stand with Turning Point as a Bible Strong Partner in 2025. Please prayerfully consider how you can best seek God personally this year—as He’s calling you to be a witness in the lives of others and make a lasting change on our world!
+- img "Raychelle"
+- img "Bible Strong Partner Crest"
+- img
+- img
+- heading "Bible Strong Partner" [level=2]
+- heading "$ per month commitment" [level=3]:
+  - text: $
+  - img
+  - text: per month commitment
+- heading "Or monthly minimum of $25" [level=4]
+- link "Join Today":
+  - /url: "#"
+- link "Already a member?":
+  - /url: /my-account/membership-package
+- img "Presidents Circle Crest"
+- img
+- img
+- heading "President’s Circle" [level=2]
+- heading "$ per week commitment" [level=3]:
+  - text: $
+  - img
+  - text: per week commitment
+- heading "Or yearly minimum of $1,500" [level=4]
+- link "Join Today":
+  - /url: "#"
+- link "Already a member?":
+  - /url: /my-account/membership-package
+- img "Vision Circle Crest"
+- img
+- img
+- heading "Vision Circle" [level=2]
+- heading "$ per day commitment" [level=3]:
+  - text: $
+  - img
+  - text: per day commitment
+- heading "Or yearly minimum of $5,000" [level=4]
+- link "Join Today":
+  - /url: "#"
+- link "Already a member?":
+  - /url: /my-account/membership-package
+- link:
+  - /url: /
+  - img
+- paragraph:
+  - link "www.DavidJeremiah.org":
+    - /url: /
+- paragraph: Turning Point is the broadcast ministry of Dr. David Jeremiah
+- heading [level=2]
+- paragraph: 00:00 / 00:00
+```

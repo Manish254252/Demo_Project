@@ -1,0 +1,4 @@
+//div[@class='nav-menu']//a[1]
+//div[@class='nav-menu']//a[2]
+//div[@class='nav-menu']//a[3]
+//div[@class='nav-menu']//a[4]

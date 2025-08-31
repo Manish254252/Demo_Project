@@ -1,6 +1,14 @@
 import { Page, Locator, expect } from '@playwright/test';
+import LoginLocators from "../Locators/LoginPageLocators.json"
 
 export class CombinedPages {
+  async waitForTime(arg0: number) {
+      await this.page.waitForTimeout(arg0);
+  }
+  async verifySuccessfulLogin() {
+      const myaccountTab = this.page.locator('#tab_my-account');
+      await expect(myaccountTab).toBeVisible();
+  }
   protected page: Page;
   private readonly baseUrl: string = 'https://www.davidjeremiah.org/';
 
@@ -107,7 +115,10 @@ export class CombinedPages {
   // ================================
 
   async performSplashPageActions(): Promise<void> {
-    await this.page.goto(`${this.baseUrl}splash?id=425&ReturnUrl=%2F`);
+    await this.page.goto(`${this.baseUrl}`);
+    // await this.page.waitForTimeout(15000);
+    await this.page.waitForLoadState('domcontentloaded');
+    // Wait for potential animations
     await this.waitForPageLoad();
     
     // Try to click skip button if present
@@ -227,6 +238,9 @@ export class CombinedPages {
     await expect(this.loginElements.passwordInput()).toBeVisible();
     await expect(this.loginElements.loginButton()).toBeVisible();
   }
+  async verifyInvalidLoginError(): Promise<void> {
+    await expect(this.page.locator(LoginLocators.InvalidLoginErrorMsg.locator)).toBeVisible();
+  }
 
   async performLoginProcess(email: string, password: string): Promise<void> {
     try {
@@ -243,9 +257,8 @@ export class CombinedPages {
         await this.fillInput(this.loginElements.passwordInput(), password);
         
         // Try to click login button with shorter timeout
-        const loginButton = this.loginElements.loginButton();
-        await loginButton.waitFor({ state: 'visible', timeout: 10000 });
-        await loginButton.click();
+        const loginButton = this.page.locator("//span[text()='Login']").click()
+        
         
       } catch (loginError: any) {
         console.log('Login button not found or login failed:', loginError.message);

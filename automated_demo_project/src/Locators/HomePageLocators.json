@@ -1,0 +1,97 @@
+{
+  "addToCart": {
+    "locator": "//div[@class='btn']",
+    "description": "Add to cart button on the homepage"
+  },
+
+  "AddToCartCloseBtn": {
+    "locator": "//a[@class='btn_close']",
+    "description": "Close button on the add to cart popup"
+  },
+  "RemoveItemBtn": {
+    "locator": "//a[@class='subtract']",
+    "description": "Remove item button on the cart popup"
+  },
+  "IncreaseItemCountBtn": {
+    "locator": "//a[@class='add']",
+    "description": "Increase item count button on the cart popup"
+  },
+  "CartItemCount": {
+    "locator": "//table[@class='tbl_my_cart']//tr",
+    "description": "Item count in the cart"
+  },
+
+  "continueShoppingBtn": {
+    "locator": "//a[@class='btn_continue']",
+    "description": "Continue shopping button on the cart popup"
+  },
+
+  "GoBackToHomePage": {
+    "locator": "//span[text()='Go Back']",
+    "description": "GoBack Btn to  go back to the homepage"
+  },
+
+  "UpdateQuantityInput": {
+    "locator": "//input[@class='input_qty']",
+    "description": "Update quantity input field on the cart popup"
+  },
+
+  "QuantityValueExceedAlert": {
+    "locator": "#alert",
+    "description": "Alert message for quantity value exceeding limit"
+  },
+
+  "ItemHeader": {
+    "locator": "//th[text()='Item']",
+    "description": "Header for the item"
+  },
+  "NavSectionsLinks": {
+    "locator": "//div[@class='nav-menu']//a",
+    "description": "Navigation section links on the homepage"
+  },
+
+  "SearchBar": {
+    "locator": "#searchBox1",
+    "description": "Search bar on the homepage"
+  },
+  "searchResults": {
+    "locator": "//h1[text()='Search Results']",
+    "description": "Search results header"
+  },
+  "EmptysearchResults": {
+    "locator": "//h1[text()='Search']",
+    "description": "Empty Search results header"
+  },
+
+  "CurrencyDropdown": {
+    "locator": "(//div[@class='currencies_wrapper']//img)[1]",
+    "description": "Currency selection dropdown"
+  },
+  "CurrencyOptions": {
+    "locator": "//div[@class='currency-selector']//ul//a[@data-currency='{optionaltext}']",
+    "description": "Currency options in the dropdown"
+  },
+
+  "SelectedCurrency": {
+    "locator": "//div[@class='selected-currency']/img",
+    "description": "Selected currency display"
+  },
+
+  "SubscriptionInput": {
+    "locator": "#footer-email",
+    "description": "Subscription email input field"
+  },
+  "SubscriptionBtn": {
+    "locator": "#ctl00_ctl27_devo1_lnkSubmit",
+    "description": "Subscription button"
+  },
+  "SubscriptionSuccessMsg": {
+    "locator": "//p[@class='msg success']",
+    "description": "Subscription success message"
+  },
+  "SubscriptionErrorMsg": {
+    "locator": "//p[@class='msg err']",
+    "description": "Subscription error message"
+  }
+  
+}

@@ -1,0 +1,6 @@
+{
+  "InvalidLoginErrorMsg": {
+    "locator": "//div[@class='error-msg']",
+    "description": "Invalid login error message"
+  }
+}

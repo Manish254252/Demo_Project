@@ -1,0 +1,12 @@
+//div[@class='nav-menu']//a
+//div[@class='nav-menu']//a[1]
+//div[@class='nav-menu']//a
+//div[@class='nav-menu']//a[2]
+//div[@class='nav-menu']//a
+//div[@class='nav-menu']//a[3]
+//div[@class='nav-menu']//a
+//div[@class='nav-menu']//a[4]
+//div[@class='nav-menu']//a
+//div[@class='nav-menu']//a[5]
+//div[@class='nav-menu']//a
+//div[@class='nav-menu']//a[6]
