@@ -110,7 +110,7 @@ const iPhone12 = devices['iPhone 12'];
     await homepage.assertSubscriptionSuccessMsg();    
   });
 
-   test.only('Subscribe to newsletter with Invalid Email', async ({ page }) => {
+   test('Subscribe to newsletter with Invalid Email', async ({ page }) => {
     const davidJeremiahPages = new CombinedPages(page);
     await davidJeremiahPages.performSplashPageActions();
     const homepage = new HomePage(page);

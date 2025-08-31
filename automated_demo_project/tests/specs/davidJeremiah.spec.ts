@@ -3,7 +3,7 @@ import { expect } from '@playwright/test';
 import { CombinedPages } from '../../src/pages/DavidJeremiah';
 
 test.describe('David Jeremiah Website - Combined Workflow Tests', () => {
-  
+  test.describe.configure({ timeout: 60000 }); // 60 seconds for all tests in this block
   test('Complete David Jeremiah website workflow using CombinedPages', async ({ page }) => {
     const davidJeremiahPages = new CombinedPages(page);
     

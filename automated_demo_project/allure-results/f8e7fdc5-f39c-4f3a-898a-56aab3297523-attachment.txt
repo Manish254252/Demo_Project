@@ -1,0 +1,8 @@
+Login button not found or login failed: locator.fill: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('input[type="email"], input[name="email"], input[id="email"]').first()
+    - locator resolved to <input value="" type="email" id="input_email" placeholder="Email Address"/>
+
+Login step encountered an issue: page.waitForTimeout: Target page, context or browser has been closed
+Cannot take screenshot 'login-error' - page is closed
+Login step completed (verification skipped due to invalid test credentials)

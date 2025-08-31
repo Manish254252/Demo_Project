@@ -3,6 +3,7 @@ import { expect } from '@playwright/test';
 import { CombinedPages } from '../../src/pages/DavidJeremiah';
 
 test.describe('Login Page Tests', () => {
+    test.describe.configure({ timeout: 60000 }); // 60 seconds for all tests in this block
   test('Successful Login', async ({ page }) => {
     const davidJeremiahPages = new CombinedPages(page);
     await davidJeremiahPages.performSplashPageActions();

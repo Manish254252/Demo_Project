@@ -2,6 +2,7 @@ import { Page, Locator, expect } from '@playwright/test';
 import LoginLocators from "../Locators/LoginPageLocators.json"
 
 export class CombinedPages {
+  
   async waitForTime(arg0: number) {
       await this.page.waitForTimeout(arg0);
   }

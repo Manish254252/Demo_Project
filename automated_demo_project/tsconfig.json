@@ -23,7 +23,8 @@
       "@utils/*": ["src/utils/*"],
       "@tests/*": ["tests/*"]
     },
-    "types": ["node", "@playwright/test"]
+    "types": ["node", "@playwright/test"],
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "src/**/*",
