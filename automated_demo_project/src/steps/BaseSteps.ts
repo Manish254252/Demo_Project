@@ -1,5 +1,5 @@
 import { Page, expect } from '@playwright/test';
-import { CombinedPages } from '../pages/DavidJeremiah';
+import { CombinedPages } from '../pages/BasePage';
 
 export abstract class BaseSteps {
   protected page: Page;
