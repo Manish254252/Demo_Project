@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 import { BaseSteps } from './BaseSteps';
-import { CombinedPages } from '../pages/DavidJeremiah';
+import { CombinedPages } from '../pages/BasePage';
 
 // HomeSteps provides page interaction methods for the David Jeremiah homepage
 export class HomeSteps extends BaseSteps {

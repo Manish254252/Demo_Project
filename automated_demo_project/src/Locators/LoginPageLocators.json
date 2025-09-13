@@ -2,5 +2,22 @@
   "InvalidLoginErrorMsg": {
     "locator": "//div[@class='error-msg']",
     "description": "Invalid login error message"
+  },
+
+  "EmailInputField": {
+    "locator": "#input_email",
+    "description": "Email input field"
+  },
+  "PasswordInputField": {
+    "locator": "#input_password]",
+    "description": "Password input field"
+  },
+  "LoginButton": {
+    "locator": "//span[text()='Login']",
+    "description": "Login button"
+  },
+    "LoginLink": {
+    "locator": "//a[text()='Login']",
+    "description": "Login link Button on homepage"
   }
 }

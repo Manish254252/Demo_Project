@@ -1,6 +1,6 @@
 import { Page, expect } from '@playwright/test';
 import { BaseSteps } from './BaseSteps';
-import { CombinedPages } from '../pages/DavidJeremiah';
+import { CombinedPages } from '../pages/BasePage';
 
 export class DavidJeremiahSteps extends BaseSteps {
   constructor(page: Page) {
