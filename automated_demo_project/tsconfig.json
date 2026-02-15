@@ -24,7 +24,7 @@
       "@tests/*": ["tests/*"]
     },
     "types": ["node", "@playwright/test"],
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "5.0"
   },
   "include": [
     "src/**/*",

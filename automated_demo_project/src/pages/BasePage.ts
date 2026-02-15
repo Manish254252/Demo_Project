@@ -41,13 +41,18 @@ export class BasePage {
     await this.page.waitForLoadState('domcontentloaded', { timeout });
   }
 
-  async waitForElement(locator: string, timeout: number = 30000): Promise<void> {
-    await this.page.locator(locator).waitFor({ state: 'visible', timeout });
+  async waitForElement(locator: string | Locator, timeout: number = 30000): Promise<void> {
+    if (typeof locator === 'string') {
+      await this.page.locator(locator).waitFor({ state: 'visible', timeout });
+    } else {
+      await locator.waitFor({ state: 'visible', timeout });
+    }
   }
 
   async clickElement(locator: string): Promise<void> {
-    await this.waitForElement(locator);
-    await this.page.locator(locator).click();
+    const loc = this.page.locator(locator).first();
+    await this.waitForElement(loc);
+    await loc.click();
   }
 
   async fillInput(locator: string, text: string): Promise<void> {

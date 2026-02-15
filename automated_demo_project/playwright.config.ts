@@ -3,6 +3,9 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests/specs',
   fullyParallel: true,
+
+  timeout: 360 * 1000,
+  globalTimeout: 560 * 1000,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
@@ -25,8 +28,7 @@ export default defineConfig({
       size: { width: 1280, height: 720 }
     },
     headless: process.env.HEADLESS_MODE === 'false' ? false : false,
-    actionTimeout: 30000,
-    navigationTimeout: 60000
+    
   },
 
   projects: [

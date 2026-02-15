@@ -50,6 +50,34 @@
     "description": "Navigation section links on the homepage"
   },
 
+  "NavHome": {
+    "locator": "//div[@class='nav-menu']//div[contains(@class,'nav-menu-item-text') and normalize-space(text())='Home']/ancestor::a",
+    "description": "Home navigation link"
+  },
+
+  "NavRadio": {
+    "locator": "//div[@class='nav-menu']//div[contains(@class,'nav-menu-item-text') and normalize-space(text())='Radio']/ancestor::a",
+    "description": "Radio navigation link"
+  },
+
+  "NavTelevision": {
+    "locator": "//div[@class='nav-menu']//div[contains(@class,'nav-menu-item-text') and normalize-space(text())='Television']/ancestor::a",
+    "description": "Television navigation link"
+  },
+
+  "NavMagazine": {
+    "locator": "//div[@class='nav-menu']//div[contains(@class,'nav-menu-item-text') and normalize-space(text())='Magazine']/ancestor::a",
+    "description": "Magazine navigation link"
+  },
+  "SliderNext": {
+    "locator": "//a[contains(@class,'next') and contains(@onclick,'goToSlide')]",
+    "description": "Slider next arrow"
+  },
+
+  "SliderPrev": {
+    "locator": "//a[contains(@class,'prev') and contains(@onclick,'goToSlide')]",
+    "description": "Slider previous arrow"
+  },
   "SearchBar": {
     "locator": "#searchBox1",
     "description": "Search bar on the homepage"

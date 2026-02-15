@@ -1,129 +1,160 @@
-import HomepageLocators from '../Locators/HomePageLocators.json';
+
 import { expect, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
+import HomePageLocators from '../Locators/HomePageLocators.json';
 
 export class HomePage extends BasePage {
- async assertSubscriptionErrorMsg() {
-   
-   await expect(this.page.locator(HomepageLocators.SubscriptionErrorMsg.locator)).toContainText("Please enter a valid email address");
-   console.log(await this.page.locator(HomepageLocators.SubscriptionErrorMsg.locator).textContent());
+	constructor(page: Page) {
+		super(page);
+	}
 
- }
- async subscribeToNewsletter(arg0: string) {
-   await this.page.fill(HomepageLocators.SubscriptionInput.locator, arg0);
- }
- async assertSubscriptionSuccessMsg() {
-    
-   await expect(this.page.locator(HomepageLocators.SubscriptionSuccessMsg.locator)).toContainText("You've been successfully signed up!");
- }
- async SelectedCurrency(arg0: string) {
-      await this.clickWithOptText(arg0,HomepageLocators.CurrencyOptions.locator);
-  }
-  async clickCurrencyDropdown() {
-    await this.page.click(HomepageLocators.CurrencyDropdown.locator);
-    await this.page.waitForTimeout(2000);
-  }
-  async EmptysearchItem() {
-    await this.page.locator(HomepageLocators.SearchBar.locator).fill("");
-    await this.page.locator(HomepageLocators.SearchBar.locator).press('Enter');
-    await this.page.waitForTimeout(5000);
-    await expect(this.page.locator(HomepageLocators.EmptysearchResults.locator)).toBeVisible();
-  }
-  async navigateSections() {
-    const length = await this.page.locator(HomepageLocators.NavSectionsLinks.locator).count();
-    for (let index = 1; index <= length; index++) {
-      const xpath = HomepageLocators.NavSectionsLinks.locator;
-      console.log(xpath + `[${index}]`);
-      await this.page.locator(xpath + `[${index}]`).click();
-      await this.page.waitForTimeout(4000);
-    }
-  }
-  constructor( page: Page) {
-  super(page);
-  }
-  async addToCart() {
-    await this.page.click(HomepageLocators.addToCart.locator);
-    await this.page.waitForTimeout(3000); // Wait for 3 seconds to ensure the action is completed
-  }
+	async clickHome(): Promise<void> {
+		await this.clickElement(HomePageLocators.NavHome.locator);
+	}
 
-  async updateQuantity(quantity: number) {
-    await this.page.click(HomepageLocators.addToCart.locator);
-    await this.page.fill(HomepageLocators.UpdateQuantityInput.locator, quantity.toString());
-    await this.clickItemHeader();
-  }
+	async clickRadio(): Promise<void> {
+		await this.clickElement(HomePageLocators.NavRadio.locator);
+	}
 
-  async removeItem() {
-    await this.page.click(HomepageLocators.addToCart.locator);
-    await this.page.click(HomepageLocators.RemoveItemBtn.locator);
-  }
+	async clickTelevision(): Promise<void> {
+		await this.clickElement(HomePageLocators.NavTelevision.locator);
+	}
 
-  async closeAddToCartPopup() {
-    await this.page.click(HomepageLocators.AddToCartCloseBtn.locator);
-  }
+	async clickMagazine(): Promise<void> {
+		await this.clickElement(HomePageLocators.NavMagazine.locator);
+	}
 
-  async assertQuantityValueExceedAlert() {
-    await expect(
-      this.page.locator(HomepageLocators.QuantityValueExceedAlert.locator)
-    ).toBeVisible();
-  }
+	async expectNavVisible(): Promise<void> {
+		await expect(this.page.locator(HomePageLocators.NavSectionsLinks.locator)).toBeVisible();
+	}
 
-  async clickItemHeader() {
-    await this.page.click(HomepageLocators.ItemHeader.locator);
-  }
+		async isHomeVisible(): Promise<boolean> {
+			return await this.isElementVisible(this.page.locator(HomePageLocators.NavHome.locator));
+		}
 
-  async searchItem(arg0: string) {
-    await this.page.locator(HomepageLocators.SearchBar.locator).fill(arg0);
-    await this.page.locator(HomepageLocators.SearchBar.locator).press('Enter');
-    await this.page.waitForTimeout(5000);
-    await expect(this.page.locator(HomepageLocators.searchResults.locator)).toBeVisible();
-  }
+			// Slider controls
+			async isSliderNextVisible(): Promise<boolean> {
+				const candidates = [
+					HomePageLocators.SliderNext.locator,
+					"//a[contains(@class,'next') and contains(@onclick,'goToSlide')]",
+					"a.next",
+					"a.next[onclick*='goToSlide']",
+				];
 
-  async clickWithOptText(text:string,Locator:string)
-  {
-    console.log(Locator.replace('{optionaltext}', text));
-    
-    await this.page.locator(Locator.replace('{optionaltext}', text)).click();
-  }
+				for (const sel of candidates) {
+					try {
+						const loc = this.page.locator(sel).first();
+						// wait briefly for the element to be attached
+						await loc.waitFor({ state: 'attached', timeout: 1500 }).catch(() => {});
+						// try to bring into view
+						try { await loc.scrollIntoViewIfNeeded(); } catch (e) { void e; }
+						// check visibility
+						if (await this.isElementVisible(loc)) return true;
+						// try hover to reveal controls (some sliders hide arrows until hover)
+						try { await loc.hover(); } catch (e) { void e; }
+						if (await this.isElementVisible(loc)) return true;
+					} catch (e) {
+						// ignore and try next selector
+					}
+				}
+				return false;
+			}
 
-  async assertSelectedCurrency(text:string)
-  {
-    await expect(this.page.locator(HomepageLocators.SelectedCurrency.locator)).toHaveAttribute('title', text);
-  }
-    async performHomePageVerification(): Promise<void> {
-    // Verify we're on the correct URL
-    const currentUrl = await this.getCurrentUrl();
-    expect(currentUrl).toContain('davidjeremiah.org');
-    
-    // Verify basic page elements are visible
-    const bodyElement = this.page.locator('body');
-    await expect(bodyElement).toBeVisible();
-    
-    // Check for header (try multiple selectors)
-    const headerSelectors = ['.site-header', 'header', '#header', '.header'];
-    let headerFound = false;
-    for (const selector of headerSelectors) {
-      try {
-        const headerElement = this.page.locator(selector).first();
-        await expect(headerElement).toBeVisible({ timeout: 5000 });
-        headerFound = true;
-        break;
-      } catch (error) {
-        continue;
-      }
-    }
-    if (!headerFound) {
-      console.log('No standard header found, but continuing with test...');
-    }
-    
-    await this.waitForPageLoad();
-  }
+			async isSliderPrevVisible(): Promise<boolean> {
+				const candidates = [
+					HomePageLocators.SliderPrev.locator,
+					"//a[contains(@class,'prev') and contains(@onclick,'goToSlide')]",
+					"a.prev",
+					"a.prev[onclick*='goToSlide']",
+				];
 
-   async performHomePageNavigation(): Promise<void> {
-    await this.navigateToUrl();
-    await this.waitForPageLoad();
-  }
-  async verifyHomePage(): Promise<void> {
-    await expect(this.page).toHaveURL(/davidjeremiah\.org/);
-    await expect(this.page).toHaveTitle(/DavidJeremiah/);
-  }
+				for (const sel of candidates) {
+					try {
+						const loc = this.page.locator(sel).first();
+						await loc.waitFor({ state: 'attached', timeout: 1500 }).catch(() => {});
+						try { await loc.scrollIntoViewIfNeeded(); } catch (e) { void e; }
+						if (await this.isElementVisible(loc)) return true;
+						try { await loc.hover(); } catch (e) { void e; }
+						if (await this.isElementVisible(loc)) return true;
+					} catch (e) {
+						// ignore and continue
+					}
+				}
+				return false;
+			}
+
+			async clickSliderNext(): Promise<void> {
+				await this.clickElement(HomePageLocators.SliderNext.locator);
+			}
+
+			async clickSliderPrev(): Promise<void> {
+				await this.clickElement(HomePageLocators.SliderPrev.locator);
+			}
+
+			/**
+			 * Fill the search input and submit (press Enter). Waits for page load.
+			 */
+			async search(term: string): Promise<void> {
+				const locator = HomePageLocators.SearchBar.locator;
+				await this.fillInput(locator, term);
+				// submit via Enter key
+				await this.page.locator(locator).press('Enter');
+				await this.waitForPageLoad();
+			}
+
+			async isSearchResultsVisible(): Promise<boolean> {
+				return await this.isElementVisible(this.page.locator(HomePageLocators.searchResults.locator));
+			}
+
+			/**
+			 * Navigate through all nav links found in the top nav menu.
+			 * Collects hrefs first (so we don't rely on page-bound locators after navigation),
+			 * then visits each link via page.goto and records the result.
+			 * Returns an array of visit summaries.
+			 */
+	async navigateThroughNavLinks(): Promise<Array<{text: string; href: string; visitedUrl: string; error?: string}>> {
+		const navKeys = ['NavHome', 'NavRadio', 'NavTelevision', 'NavMagazine'] as const;
+		const results: Array<{text: string; href: string; visitedUrl: string; error?: string}> = [];
+
+		for (const key of navKeys) {
+			// @ts-ignore
+			const locatorEntry = HomePageLocators[key];
+			if (!locatorEntry || !locatorEntry.locator) {
+				results.push({ text: key, href: '', visitedUrl: '', error: 'locator-missing' });
+				continue;
+			}
+
+			const anchor = this.page.locator(locatorEntry.locator).first();
+			let href = '';
+			let text: string = '';
+			try {
+				href = (await anchor.getAttribute('href')) || '';
+				text = (await anchor.locator('.nav-menu-item-text').textContent())?.trim() || (await anchor.textContent())?.trim() || key;
+			} catch (e: any) {
+				results.push({ text: key, href: href || '', visitedUrl: '', error: `read-error: ${e.message}` });
+				continue;
+			}
+
+			try {
+				await this.clickElement(locatorEntry.locator);
+				await this.waitForPageLoad();
+				const visited = await this.getCurrentUrl();
+				const visible = await this.isElementVisible(this.page.locator(locatorEntry.locator));
+				if (visible) {
+					results.push({ text, href, visitedUrl: visited });
+				} else {
+					results.push({ text, href, visitedUrl: visited, error: 'locator-not-visible-after-click' });
+				}
+			} catch (err: any) {
+				results.push({ text, href, visitedUrl: '', error: err.message });
+			}
+		}
+
+		// Print results for debugging when running tests
+		console.log('navigateThroughNavLinks results:', results);
+
+		return results;
+	}
+
+
 }

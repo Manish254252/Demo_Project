@@ -1,0 +1,22 @@
+{
+  "PageHeading": {
+    "locator": "h1:has-text(\"Magazine\"), h2:has-text(\"Magazine\"), text=Sign up",
+    "description": "Magazine page heading or signup prompt"
+  },
+  "EmailInput": {
+    "locator": "input[type=\"email\"], input[id*=\"email\" i], input[name*=\"email\" i]",
+    "description": "Email input for magazine signup"
+  },
+  "SubmitBtn": {
+    "locator": "button[type=\"submit\"], input[type=\"submit\"], button:has-text(\"Sign\"), button:has-text(\"Subscribe\")",
+    "description": "Submit button for signup"
+  },
+  "InlineError": {
+    "locator": "text=invalid, text=Invalid, .error, .invalid-feedback",
+    "description": "Inline validation error message"
+  },
+  "SuccessMsg": {
+    "locator": "text=Thank you, text=Success, text=Confirmation, .success, .alert-success",
+    "description": "Success confirmation message"
+  }
+}

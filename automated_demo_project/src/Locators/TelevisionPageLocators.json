@@ -1,0 +1,48 @@
+{
+  "PageHeading": {
+      "locator": "(//video)[1]",
+      "description": "Primary video element on Television pages (by id or class)"
+    },
+  "WatchNow": {
+    "locator": "(//a[text()='Watch Now'])[4]",
+    "description": "Watch Now CTA by class or onclick handler (fallback to text)"
+  },
+  "Media": {
+    "locator": "(//video)[1]",
+    "description": "Media player elements"
+  },
+  "ScheduleLink": {
+    "locator": "a[href=\"/television/archives\"], a:has-text(\"Archives & Schedule\"), a:has-text(\"Archives\")",
+    "description": "Link to Television Archives & Schedule (by href or text)"
+  },
+  "ArchivesTab": {
+    "locator": "//a[text()='Archives']",
+    "description": "Archives tab link in Television pages (tab control)"
+  },
+  "DaytimeHeading": {
+    "locator": ".breadcrumbs",
+    "description": "Daytime page heading"
+  },
+  "EpisodeList": {
+    "locator": "//h2[text()='More From This Series']",
+    "description": "Episode listing elements"
+  },
+  "WeekendLocator": {
+    "locator": "//a[text()='Weekend Series']",
+    "description": "Weekend content marker"
+  },
+  "ResourceCTA": {
+    "locator": "a:has-text(\"Resource\"), text=/resource/i",
+    "description": "CTA on monthly resource page"
+  }
+  ,
+  "OrderNowBtn": {
+    "locator": "(//button[@data-prod-id='CGAHBK'])[1]",
+    "description": "Order Now product CTA button (matches class, data-prod-id or text)"
+  }
+  ,
+  "MonthlyResourceLink": {
+    "locator": "//a[text()='Monthly Resource']",
+    "description": "Link to the Monthly Resource page by exact link text"
+  }
+}

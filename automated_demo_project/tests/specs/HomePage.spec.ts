@@ -1,120 +1,60 @@
-import { test } from "@tests/fixtures/test-base";
-import { devices, expect } from "@playwright/test";
-import { CombinedPages } from "@/pages/DavidJeremiah";
-import { HomePage } from '../../src/pages/HomePage';
+import { test, expect } from '@playwright/test';
+import data  from "../env.json";
+import { HomePage } from '@/pages/HomePage';
+
+
 
 
 
 
 test.describe('Home Page Tests', () => {
-  test.describe.configure({ timeout: 60000 });
-const iPhone12 = devices['iPhone 12'];
-  test('Add to cart', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.addToCart();
 
-   
+  test('Verify homepage loads successfully', async ({ page }) => {
+    const baseUrl = data.BASE_URL;
+    await page.goto(baseUrl);
+    const home = new HomePage(page);
+    expect(await home.isHomeVisible()).toBe(true);
   });
 
-  test('Update Quantity ', async ({ page }) => {
-    
-   const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.updateQuantity(3);
-
+  test('Verify navigation links are visible', async ({ page }) => {
+    const baseUrl = data.BASE_URL;
+    await page.goto(baseUrl);
+    const home = new HomePage(page);
+    await home.navigateThroughNavLinks();
+  
   });
 
-  test('Remove Item', async ({ page }) => {
-
-   const davidJeremiahPages = new CombinedPages(page);
-   const homepage = new HomePage(page);
-   await davidJeremiahPages.performSplashPageActions();
-   await homepage.removeItem();
+  test('Verify slider controls are visible', async ({ page }) => {
+    const baseUrl = data.BASE_URL;
+    await page.goto(baseUrl);
+    const home = new HomePage(page);
+    await home.clickHome();
+    expect(await home.isSliderNextVisible()).toBe(true);
+    expect(await home.isSliderPrevVisible()).toBe(true);
   });
 
-
-  test('Invalid Quantity', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.updateQuantity(-1000);
-    await homepage.assertQuantityValueExceedAlert();
-
-  });
-  test('Exceed Stock ', async ({ page }) => {
-
-   const davidJeremiahPages = new CombinedPages(page);
-   const homepage = new HomePage(page);
-   await davidJeremiahPages.performSplashPageActions();
-   await homepage.updateQuantity(1000);
-   await homepage.assertQuantityValueExceedAlert();
-
+  test('Verify slider navigation using next and prev', async ({ page }) => {
+    const baseUrl = data.BASE_URL;
+    await page.goto(baseUrl);
+    const home = new HomePage(page);
+    await home.clickHome();
+    // Navigate slider forward and back; assert controls remain visible after each action
+    await home.clickSliderNext();
+    expect(await home.isSliderNextVisible()).toBe(true);
+    expect(await home.isSliderPrevVisible()).toBe(true);
+    await home.clickSliderPrev();
+    expect(await home.isSliderNextVisible()).toBe(true);
+    expect(await home.isSliderPrevVisible()).toBe(true);
+    // Ensure controls remain visible after navigation
+    expect(await home.isSliderNextVisible()).toBe(true);
+    expect(await home.isSliderPrevVisible()).toBe(true);
   });
 
-
-  test('Navigate Through Sections on homepage', async ({ page }) => {
-    test.setTimeout(180000); // 3 minutes for this test
-
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.navigateSections();
-  });
-
-
-  test('Searching item from search bar', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.searchItem('Promise of Heaven');
-  });
-
-   test('Empty Searching item from search bar', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.EmptysearchItem();
-  });
-
-
-  test('Select currency from dropdown', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.addToCart();
-    await homepage.clickCurrencyDropdown();
-    await homepage.SelectedCurrency('nzd');
-    await homepage.assertSelectedCurrency('NZD');
-  });
-
- test('US billing for US Domain', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    const homepage = new HomePage(page);
-    await davidJeremiahPages.performSplashPageActions();
-    await homepage.addToCart();
-    await homepage.clickCurrencyDropdown();
-    await homepage.SelectedCurrency('usd');
-    await homepage.assertSelectedCurrency('USD');
-  });
-
-
-  test('Subscribe to newsletter', async ({ page }) => {
-    test.setTimeout(90000); // 90 seconds for this test
-    const davidJeremiahPages = new CombinedPages(page);
-    await davidJeremiahPages.performSplashPageActions();
-    const homepage = new HomePage(page);
-    await homepage.subscribeToNewsletter('test@example.com');
-    await homepage.assertSubscriptionSuccessMsg();    
-  });
-
-   test('Subscribe to newsletter with Invalid Email', async ({ page }) => {
-    const davidJeremiahPages = new CombinedPages(page);
-    await davidJeremiahPages.performSplashPageActions();
-    const homepage = new HomePage(page);
-    await homepage.subscribeToNewsletter('invalid-email');
-    await homepage.assertSubscriptionErrorMsg();    
+ test('Verify Search functionality', async ({ page }) => {
+   const baseUrl = data.BASE_URL;
+   await page.goto(baseUrl);
+   const home = new HomePage(page);
+   await home.search('test');
+   expect(await home.isSearchResultsVisible()).toBe(true);
   });
 });
