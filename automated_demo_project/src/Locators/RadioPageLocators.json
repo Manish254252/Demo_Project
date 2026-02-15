@@ -1,30 +1,7 @@
 {
-  "PageHeading": {
-    "locator": "h1:has-text(\"Radio\"), h2:has-text(\"Radio\"), text=Listen",
-    "description": "Radio page heading"
-  },
-  "ResourceTitle": {
-    "locator": "h1, h2, .resource-title, .entry-title",
-    "description": "Resource title on radio page"
-  },
-  "ResourceImage": {
-    "locator": "img",
-    "description": "Representative image on resource pages"
-  },
-  "CTA": {
-    "locator": "text=Request, text=Listen, a:has-text(\"Request\"), a:has-text(\"Listen\")",
-    "description": "Main CTA on radio page (Request/Listen)"
-  },
-  "ArchivesPath": {
-    "locator": "//a[contains(translate(., 'ARCHIVES', 'archives'), 'archive') or contains(@href,'archive') or contains(@href,'archives')]",
-    "description": "Link to archives if present"
-  },
-  "ArchiveList": {
-    "locator": ".archive-list, .archives, .archive",
-    "description": "Archive list container"
-  },
-  "ArchiveItemLink": {
-    "locator": ".archive-item a, .archive-list li a, .archives li a",
-    "description": "Links to individual archive items"
+  "RadioPageTitle": {
+    "locator": "//a[text()=\"Today's Broadcast\"]",
+    "description": "Locator for a unique element on the Radio page, such as a heading or title"
   }
+
 }
