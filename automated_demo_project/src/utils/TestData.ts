@@ -64,4 +64,46 @@ export class TestData {
     const env = process.env.TEST_ENV || 'DEV';
     return this.ENVIRONMENTS[env as keyof typeof this.ENVIRONMENTS] || this.ENVIRONMENTS.DEV;
   }
+  
 }
+export type UserIdentity = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
+const firstNames = [
+  "Aarav", "Vivaan", "Aditya", "Arjun", "Reyansh",
+  "Ishaan", "Kabir", "Rohan", "Manish", "Rahul",
+  "Ananya", "Diya", "Meera", "Priya", "Neha"
+];
+
+const lastNames = [
+  "Sharma", "Verma", "Gupta", "Patel", "Singh",
+  "Kumar", "Reddy", "Nair", "Iyer", "Solanki"
+];
+
+const domains = ["gmail.com", "outlook.com", "yahoo.com"];
+
+const rand = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+const normalize = (s: string) => s.toLowerCase();
+
+export function generateUser(): UserIdentity {
+  const firstName = rand(firstNames);
+  const lastName = rand(lastNames);
+
+  const patterns = [
+    `${normalize(firstName)}.${normalize(lastName)}`,
+    `${normalize(firstName)}${normalize(lastName)}`,
+    `${normalize(firstName)}${Math.floor(Math.random() * 100)}`
+  ];
+
+  const local = rand(patterns);
+  const email = `${local}@${rand(domains)}`;
+
+  return { firstName, lastName, email };
+}
+
+// useful for negative tests
+export const invalidEmail = () => `invalid_${Date.now()}`;
+

@@ -1,7 +1,35 @@
 {
-  "RadioPageTitle": {
-    "locator": "//a[text()=\"Today's Broadcast\"]",
-    "description": "Locator for a unique element on the Radio page, such as a heading or title"
+  "RadioHeading": {
+    "locator": "h1:has-text(\"Radio Broadcast\")",
+    "description": "Main hero heading on the Radio page (Today's Radio Broadcast)"
+  },
+  "ListenNowBtn": {
+    "locator": "a.btn-listen-now",
+    "description": "Listen Now button in the hero"
+  },
+  "ListenInAppBtn": {
+    "locator": "a.btn-listen-app",
+    "description": "Listen in the App button in the hero"
+  },
+  "PurchaseDigitalLink": {
+    "locator": "a.lnk-purchase-digital-message",
+    "description": "Link to purchase the digital audio for the broadcast"
+  },
+  "MonthlyResourceNavLink": {
+    "locator": "a[href=\"/radio/monthly-resource\"]",
+    "description": "Submenu link to the monthly resource"
+  },
+  "ArchivesLink": {
+    "locator": "a[href=\"/radio/archives\"], a[href=\"/radio/archives\"]:has-text(\"Archives\")",
+    "description": "Link to the radio archives/schedule"
+  },
+  "ArchivesRow": {
+    "locator": ".archives_table .archives_table_row, .archives_table .table_options > .archives_table_row, a[href*=\"radio_archives.aspx\"], a[href*=\"/site/radio_archives.aspx\"], .broadcast_archive a, .archive_list li, .archive_item, .radio_archive a",
+    "description": "Rows or links inside the archives list (many markup variants supported)"
+  },
+  "ScheduleRow": {
+    "locator": ".schedule_table .schedule_table_row",
+    "description": "Rows inside the upcoming schedule list"
   }
 
 }
